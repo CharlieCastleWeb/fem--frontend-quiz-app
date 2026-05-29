@@ -1,0 +1,15 @@
+@theme {
+  --color-fem-white: #ffffff;
+  --color-fem-black: #000000;
+
+  --color-fem-gray-50: #f4f6fa;
+  --color-fem-gray-500: #626c7f;
+
+  --color-fem-blue-50: #ebf0ff;
+  --color-fem-blue-100: #edf1f9;
+  --color-fem-blue-300: #abc1e1;
+  --color-fem-blue-500: #306aff;
+  --color-fem-blue-850: #3b4d66;
+  --color-fem-blue-900: #313e51;
+  --color-fem-blue-950: #2d3949;
+}
