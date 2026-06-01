@@ -1,0 +1,55 @@
+@theme {
+  --font-fem-rubik: "Rubik", sans-serif;
+}
+
+@utility text-preset-1-mobile {
+  @apply font-fem-rubik font-medium text-[88px] leading-none;
+}
+
+@utility text-preset-2-mobile {
+  @apply font-fem-rubik font-medium text-[40px] leading-none;
+}
+
+@utility text-preset-2-mobile-light {
+  @apply font-fem-rubik font-light text-[40px] leading-none;
+}
+
+@utility text-preset-3-mobile {
+  @apply font-fem-rubik font-medium text-[20px] leading-[1.2];
+}
+
+@utility text-preset-4-mobile {
+  @apply font-fem-rubik font-medium text-[18px] leading-none;
+}
+
+@utility text-preset-5-mobile {
+  @apply font-fem-rubik italic font-light text-[14px] leading-none;
+}
+
+@utility text-preset-1 {
+  @apply text-[144px] font-fem-rubik font-medium leading-none;
+}
+
+@utility text-preset-2 {
+  @apply text-[64px] font-fem-rubik font-light leading-none;
+}
+
+@utility text-preset-3 {
+  @apply text-[36px] font-fem-rubik font-medium leading-[1.2];
+}
+
+@utility text-preset-4 {
+  @apply text-[28px] font-fem-rubik font-medium leading-none;
+}
+
+@utility text-preset-5-medium {
+  @apply text-[24px] font-fem-rubik font-medium leading-normal;
+}
+
+@utility text-preset-5-regular {
+  @apply text-[24px] font-fem-rubik font-normal leading-normal;
+}
+
+@utility text-preset-6 {
+  @apply text-[20px] font-fem-rubik italic font-normal leading-normal;
+}
