@@ -1,10 +1,9 @@
 import ToggleSwitch from "./toggle-switch";
-import sunIconSvg from "../assets/images/icon-sun-dark.svg";
-import sunMoonSvg from "../assets/images/icon-moon-dark.svg";
+import iconSunDarkSvg from "../assets/images/icon-sun-dark.svg";
+import iconMoonDarkSvg from "../assets/images/icon-moon-dark.svg";
+import iconSunLightSvg from "../assets/images/icon-sun-light.svg";
+import iconMoonLightSvg from "../assets/images/icon-moon-light.svg";
 import { useEffect, useState } from "react";
-
-const sunIcon = <img src={sunIconSvg} alt="" className="size-4" />;
-const sunMoon = <img src={sunMoonSvg} alt="" className="size-4" />;
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(() => {
@@ -23,11 +22,16 @@ export default function ThemeToggle() {
     localStorage.setItem("isDark", String(isDark));
   }, [isDark]);
 
+  const iconSunSrc = isDark ? iconSunLightSvg : iconSunDarkSvg;
+  const iconSun = <img src={iconSunSrc} alt="" className="size-4" />;
+  const iconMoonSrc = isDark ? iconMoonLightSvg : iconMoonDarkSvg;
+  const iconMoon = <img src={iconMoonSrc} alt="" className="size-4" />;
+
   return (
     <ToggleSwitch
-      prepend={sunIcon}
+      prepend={iconSun}
       label="Toggle dark theme"
-      append={sunMoon}
+      append={iconMoon}
       checked={isDark}
       onChange={setIsDark}
     ></ToggleSwitch>
