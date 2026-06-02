@@ -1,5 +1,6 @@
 import "./App.css";
 import ThemeToggle from "./components/theme-toggle";
+import WelcomeIntro from "./components/welcome-intro";
 
 function App() {
   return (
@@ -8,8 +9,11 @@ function App() {
     dark:bg-fem-blue-900 dark:bg-mobile-dark-pattern duration-300 ease-in-out"
     >
       <header className="py-4 px-6 flex justify-end items-center">
-        <ThemeToggle></ThemeToggle>
+        <ThemeToggle />
       </header>
+      <main className="px-6 py-8">
+        <WelcomeIntro />
+      </main>
     </div>
   );
 }
