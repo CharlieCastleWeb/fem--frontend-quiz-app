@@ -1,4 +1,5 @@
 import "./App.css";
+import SubjectSelector from "./components/subject-selector";
 import ThemeToggle from "./components/theme-toggle";
 import WelcomeIntro from "./components/welcome-intro";
 
@@ -13,6 +14,7 @@ function App() {
       </header>
       <main className="px-6 py-8">
         <WelcomeIntro />
+        <SubjectSelector className="mt-10" />
       </main>
     </div>
   );
