@@ -4,6 +4,7 @@ type AppButtonProps = {
   iconAlt?: string;
   iconContainerClassName?: string;
   buttonClassName?: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export default function AppButton({
@@ -12,10 +13,12 @@ export default function AppButton({
   iconAlt,
   iconContainerClassName,
   buttonClassName,
+  onClick,
 }: AppButtonProps) {
   return (
     <button
-      className={`cursor-pointer p-3.25 bg-fem-white w-full flex items-center justify-items-start gap-4 rounded-xl border-3 border-transparent  ${buttonClassName ?? ""}`}
+      onClick={onClick}
+      className={`cursor-pointer p-3.25 bg-fem-white w-full flex items-center justify-items-start gap-4 rounded-xl border-3 border-transparent  ${buttonClassName ?? ""} transition-all duration-300 ease-in-out`}
     >
       {icon && (
         <div className={`rounded-md p-2 ${iconContainerClassName ?? ""}`}>

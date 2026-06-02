@@ -6,6 +6,7 @@ import accessibilityIconSrc from "../assets/images/icon-accessibility.svg";
 
 type SubjectSelectorProps = {
   className?: string;
+  onSelectSubject: (subject: string) => void;
 };
 
 const subjectsConfig = [
@@ -39,12 +40,16 @@ const subjectsConfig = [
   },
 ];
 
-export default function SubjectSelector({ className }: SubjectSelectorProps) {
+export default function SubjectSelector({
+  className,
+  onSelectSubject,
+}: SubjectSelectorProps) {
   return (
     <div className={`flex flex-col gap-4 ${className ?? ""}`}>
       {subjectsConfig.map((subject) => {
         return (
           <AppButton
+            onClick={() => onSelectSubject(subject.label)}
             label={subject.label}
             icon={subject.iconSrc}
             iconAlt={subject.iconAlt}
