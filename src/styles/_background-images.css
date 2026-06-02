@@ -1,5 +1,11 @@
-@utility bg-mobile-light {
+@utility bg-mobile-light-pattern {
   background-image: url("../assets/images/pattern-background-mobile-light.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@utility bg-mobile-dark-pattern {
+  background-image: url("../assets/images/pattern-background-mobile-dark.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
