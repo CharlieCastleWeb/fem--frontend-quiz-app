@@ -21,7 +21,7 @@ export default function SubjectSelector({
           <AppButton
             onClick={() => onSelectSubject(subjectKey)}
             label={subject.label}
-            icon={subject.iconSrc}
+            iconSrc={subject.iconSrc}
             iconAlt={subject.iconAlt}
             lightColor={subject.lightColor}
             mainColor={subject.mainColor}
