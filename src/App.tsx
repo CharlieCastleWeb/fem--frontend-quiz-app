@@ -3,11 +3,12 @@ import "./App.css";
 import SubjectSelector from "./components/subject-selector";
 import WelcomeIntro from "./components/welcome-intro";
 import Quiz from "./components/quiz";
-import type { Subject } from "./components/subjects-config";
+import { type Subject } from "./components/subjects-config";
 import AppHeader from "./components/app-header";
 
 function App() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
+
   return (
     <div
       className="bg-fem-gray-50 bg-mobile-light-pattern h-screen w-full
@@ -24,7 +25,7 @@ function App() {
             />
           </>
         ) : (
-          <Quiz />
+          <Quiz subject={selectedSubject} />
         )}
       </main>
     </div>
