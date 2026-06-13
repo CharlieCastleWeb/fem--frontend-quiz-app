@@ -7,6 +7,7 @@ type AppButtonProps = {
   mainColor?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   isSelected?: boolean;
+  disabled?: boolean;
 };
 
 export default function AppButton({
@@ -18,6 +19,7 @@ export default function AppButton({
   mainColor,
   onClick,
   isSelected,
+  disabled,
 }: AppButtonProps) {
   return (
     <button
@@ -25,9 +27,11 @@ export default function AppButton({
       className={`
          cursor-pointer p-3.25 bg-fem-white w-full flex items-center 
         justify-items-start gap-4 rounded-xl border-3  transition-all duration-300 ease-in-out
+        disabled:cursor-not-allowed disabled:pointer-events-none
         ${isSelected ? "border-(--main-color)" : "border-transparent hover:border-(--main-color)/60"}  
       `}
       style={{ "--main-color": mainColor } as React.CSSProperties}
+      disabled={disabled}
     >
       {(iconSrc || iconText) && (
         <div

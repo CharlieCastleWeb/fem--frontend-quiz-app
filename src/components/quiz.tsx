@@ -15,17 +15,38 @@ export default function Quiz({ subject }: QuizProps) {
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
 
+  const onNextQuestion = () => {
+    if (currentQuestion === quiz.questions.length - 1) {
+      setIsQuizFinished(true);
+    } else {
+      setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer(null);
+      setIsAnswerSubmitted(false);
+    }
+  };
+  const onSubmitAnswer = () => setIsAnswerSubmitted(true);
+  const actionLabel = isAnswerSubmitted ? "Next Question" : "Submit Answer";
+  const handleAction = isAnswerSubmitted ? onNextQuestion : onSubmitAnswer;
+
+  const onSelectAnswer = (optionIndex: number) => {
+    if (isAnswerSubmitted) return;
+    setSelectedAnswer(optionIndex);
+  };
+
   return (
     <>
       {!isQuizFinished ? (
         <QuizQuestion
           questionNumber={currentQuestion}
-          totalQuestions={10}
-          question={quiz?.questions[currentQuestion].question}
-          options={quiz?.questions[currentQuestion].options}
+          totalQuestions={quiz.questions.length}
+          question={quiz.questions[currentQuestion].question}
+          options={quiz.questions[currentQuestion].options}
           selectedAnswer={selectedAnswer}
-          onSelectAnswer={setSelectedAnswer}
+          onSelectAnswer={onSelectAnswer}
+          handleAction={handleAction}
           mainColor={subjectsConfig[subject].mainColor}
+          actionLabel={actionLabel}
+          isAnswerSubmitted={isAnswerSubmitted}
         />
       ) : (
         <p>finished</p>
