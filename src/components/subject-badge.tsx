@@ -5,14 +5,16 @@ type SubjectBadgeProps = {
 };
 
 export default function SubjectBadge({ subject }: SubjectBadgeProps) {
+  const subjectConfig = subjectsConfig[subject];
   return (
     <div className="flex gap-4 items-center">
       <div
-        className={`rounded-md p-2 ${subjectsConfig[subject].iconContainerClassName}`}
+        className="rounded-md p-2"
+        style={{ backgroundColor: subjectConfig.lightColor }}
       >
         <img
-          src={subjectsConfig[subject].iconSrc}
-          alt={subjectsConfig[subject].iconAlt}
+          src={subjectConfig.iconSrc}
+          alt={subjectConfig.iconAlt}
           className="size-6"
         ></img>
       </div>

@@ -23,8 +23,8 @@ export default function SubjectSelector({
             label={subject.label}
             icon={subject.iconSrc}
             iconAlt={subject.iconAlt}
-            iconContainerClassName={subject.iconContainerClassName}
-            buttonClassName={subject.buttonClassName}
+            lightColor={subject.lightColor}
+            mainColor={subject.mainColor}
             key={subject.label}
           ></AppButton>
         );

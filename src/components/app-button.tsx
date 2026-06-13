@@ -2,8 +2,8 @@ type AppButtonProps = {
   label: string;
   icon?: string;
   iconAlt?: string;
-  iconContainerClassName?: string;
-  buttonClassName?: string;
+  lightColor?: string;
+  mainColor?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -11,17 +11,21 @@ export default function AppButton({
   label,
   icon,
   iconAlt,
-  iconContainerClassName,
-  buttonClassName,
+  lightColor,
+  mainColor,
   onClick,
 }: AppButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`cursor-pointer p-3.25 bg-fem-white w-full flex items-center justify-items-start gap-4 rounded-xl border-3 border-transparent  ${buttonClassName ?? ""} transition-all duration-300 ease-in-out`}
+      className="hover:border-(--main-color) cursor-pointer p-3.25 bg-fem-white w-full flex items-center justify-items-start gap-4 rounded-xl border-3 border-transparent transition-all duration-300 ease-in-out"
+      style={{ "--main-color": mainColor } as React.CSSProperties}
     >
       {icon && (
-        <div className={`rounded-md p-2 ${iconContainerClassName ?? ""}`}>
+        <div
+          className={"rounded-md p-2"}
+          style={{ backgroundColor: lightColor }}
+        >
           <img src={icon} alt={iconAlt} className="size-6"></img>
         </div>
       )}
