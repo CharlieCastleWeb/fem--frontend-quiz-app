@@ -12,6 +12,7 @@ export type QuizQuestionProps = {
   mainColor?: string;
   actionLabel?: string;
   isAnswerSubmitted?: boolean;
+  correctAnswer?: string;
 };
 
 export default function QuizQuestion({
@@ -25,6 +26,7 @@ export default function QuizQuestion({
   mainColor,
   actionLabel,
   isAnswerSubmitted,
+  correctAnswer,
 }: QuizQuestionProps) {
   const lightColor = "var(--color-fem-gray-50)";
   return (
@@ -37,6 +39,8 @@ export default function QuizQuestion({
       <div className={`flex flex-col gap-4`}>
         {options!.map((option, index) => {
           const isSelected = selectedAnswer === index;
+          const isCorrect = isAnswerSubmitted && option === correctAnswer;
+          const isIncorrect = isAnswerSubmitted && option !== correctAnswer;
           const letter = String.fromCharCode(65 + index);
           return (
             <AppButton
@@ -47,6 +51,8 @@ export default function QuizQuestion({
               mainColor={mainColor}
               onClick={() => onSelectAnswer(index)}
               isSelected={isSelected}
+              isCorrect={isCorrect}
+              isIncorrect={isIncorrect}
               disabled={isAnswerSubmitted}
             />
           );

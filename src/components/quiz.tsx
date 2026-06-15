@@ -24,7 +24,20 @@ export default function Quiz({ subject }: QuizProps) {
       setIsAnswerSubmitted(false);
     }
   };
-  const onSubmitAnswer = () => setIsAnswerSubmitted(true);
+
+  const onSubmitAnswer = () => {
+    setIsAnswerSubmitted(true);
+    if (selectedAnswer === null) return;
+    const selectedAnswerText =
+      quiz.questions[currentQuestion].options[selectedAnswer];
+    const questionAnswer = quiz.questions[currentQuestion].answer;
+    if (selectedAnswerText === questionAnswer) {
+      setScore((previousScore) => previousScore + 1);
+    } else {
+      console.log("fail");
+    }
+  };
+
   const actionLabel = isAnswerSubmitted ? "Next Question" : "Submit Answer";
   const handleAction = isAnswerSubmitted ? onNextQuestion : onSubmitAnswer;
 
@@ -35,6 +48,7 @@ export default function Quiz({ subject }: QuizProps) {
 
   return (
     <>
+      <p>{score}</p>
       {!isQuizFinished ? (
         <QuizQuestion
           questionNumber={currentQuestion}
@@ -43,6 +57,7 @@ export default function Quiz({ subject }: QuizProps) {
           options={quiz.questions[currentQuestion].options}
           selectedAnswer={selectedAnswer}
           onSelectAnswer={onSelectAnswer}
+          correctAnswer={quiz.questions[currentQuestion].answer}
           handleAction={handleAction}
           mainColor={subjectsConfig[subject].mainColor}
           actionLabel={actionLabel}
