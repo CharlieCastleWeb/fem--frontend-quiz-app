@@ -1,3 +1,6 @@
+import iconCorrect from "../assets/images/icon-correct.svg";
+import iconIncorrect from "../assets/images/icon-incorrect.svg";
+
 type AppButtonProps = {
   label: string;
   iconSrc?: string;
@@ -41,6 +44,11 @@ export default function AppButton({
       : lightColor;
   const iconTextColorClass =
     showCorrect || showIncorrect ? "text-fem-white" : "text-fem-gray-500";
+  const appendIcon = showCorrect
+    ? iconCorrect
+    : showIncorrect
+      ? iconIncorrect
+      : undefined;
 
   return (
     <button
@@ -74,6 +82,11 @@ export default function AppButton({
         </div>
       )}
       <span className="text-preset-4-mobile text-fem-blue-900">{label}</span>
+      {appendIcon && (
+        <span className="ml-auto size-10">
+          <img src={appendIcon} alt="" aria-hidden />
+        </span>
+      )}
     </button>
   );
 }
