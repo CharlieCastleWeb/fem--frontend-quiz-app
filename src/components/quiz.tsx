@@ -2,12 +2,14 @@ import { useState } from "react";
 import QuizQuestion from "./quiz-question";
 import { quizzesData } from "./quizzes-config";
 import { subjectsConfig, type Subject } from "./subjects-config";
+import QuizResults from "./quiz-results";
 
 type QuizProps = {
   subject: Subject;
+  onPlayAgain: () => void;
 };
 
-export default function Quiz({ subject }: QuizProps) {
+export default function Quiz({ subject, onPlayAgain }: QuizProps) {
   const quiz = quizzesData[subject];
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [isQuizFinished, setIsQuizFinished] = useState<boolean>(false);
@@ -33,8 +35,6 @@ export default function Quiz({ subject }: QuizProps) {
     const questionAnswer = quiz.questions[currentQuestion].answer;
     if (selectedAnswerText === questionAnswer) {
       setScore((previousScore) => previousScore + 1);
-    } else {
-      console.log("fail");
     }
   };
 
@@ -48,7 +48,6 @@ export default function Quiz({ subject }: QuizProps) {
 
   return (
     <>
-      <p>{score}</p>
       {!isQuizFinished ? (
         <QuizQuestion
           questionNumber={currentQuestion}
@@ -64,7 +63,12 @@ export default function Quiz({ subject }: QuizProps) {
           isAnswerSubmitted={isAnswerSubmitted}
         />
       ) : (
-        <p>finished</p>
+        <QuizResults
+          score={score}
+          totalQuestions={quiz.questions.length}
+          selectedSubject={subject}
+          onPlayAgain={onPlayAgain}
+        />
       )}
     </>
   );

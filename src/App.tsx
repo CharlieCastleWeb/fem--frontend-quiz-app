@@ -9,6 +9,10 @@ import AppHeader from "./components/app-header";
 function App() {
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
 
+  const handlePlayAgain = () => {
+    setSelectedSubject(null);
+  };
+
   return (
     <div
       className="bg-fem-gray-50 bg-mobile-light-pattern h-screen w-full
@@ -25,7 +29,7 @@ function App() {
             />
           </>
         ) : (
-          <Quiz subject={selectedSubject} />
+          <Quiz subject={selectedSubject} onPlayAgain={handlePlayAgain} />
         )}
       </main>
     </div>

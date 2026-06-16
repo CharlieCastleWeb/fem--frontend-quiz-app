@@ -7,7 +7,7 @@ type SubjectBadgeProps = {
 export default function SubjectBadge({ subject }: SubjectBadgeProps) {
   const subjectConfig = subjectsConfig[subject];
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-4 items-center w-fit">
       <div
         className="rounded-md p-2"
         style={{ backgroundColor: subjectConfig.lightColor }}
