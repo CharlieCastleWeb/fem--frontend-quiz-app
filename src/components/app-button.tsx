@@ -64,11 +64,11 @@ export default function AppButton({
     >
       {(iconSrc || iconText) && (
         <div
-          className={"rounded-md p-2 size-14 flex items-center justify-center"}
+          className={"rounded-md p-1 size-10 flex items-center justify-center"}
           style={{ backgroundColor: iconTextBackgroundColor }}
         >
           {iconSrc ? (
-            <img src={iconSrc} alt={iconAlt ?? ""} className="size-6"></img>
+            <img src={iconSrc} alt={iconAlt ?? ""} className="size-7"></img>
           ) : (
             iconText && (
               <span

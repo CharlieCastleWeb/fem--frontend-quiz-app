@@ -9,7 +9,7 @@ export default function WelcomeIntro() {
           Frontend Quiz!
         </span>
       </h1>
-      <p className="text-preset-5-mobile text-fem-gray-500 mt-4">
+      <p className="text-preset-5-mobile text-fem-gray-500 mt-5 tracking-[0.2px]">
         Pick a subject to get started.
       </p>
     </>
