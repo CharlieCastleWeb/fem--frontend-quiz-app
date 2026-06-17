@@ -29,13 +29,19 @@ export default function QuizQuestion({
   correctAnswer,
 }: QuizQuestionProps) {
   const lightColor = "var(--color-fem-gray-50)";
+  const progressBarWidth = `${((questionNumber + 1) / totalQuestions) * 100}%`;
   return (
     <>
       <p className="text-preset-5-mobile text-fem-gray-500 mb-4">
         Question <span>{questionNumber + 1}</span> of {totalQuestions}
       </p>
       <p className="text-preset-3-mobile mb-6">{question}</p>
-      <p className="mb-10">Progress Bar</p>
+      <div className="w-full h-4 bg-fem-white mb-10 rounded-full flex items-center p-1">
+        <div
+          className="bg-fem-purple-600 h-2 rounded-full"
+          style={{ width: progressBarWidth }}
+        ></div>
+      </div>
       <div className={`flex flex-col gap-4`}>
         {options!.map((option, index) => {
           const isSelected = selectedAnswer === index;
