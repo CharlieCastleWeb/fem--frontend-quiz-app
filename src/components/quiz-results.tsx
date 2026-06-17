@@ -39,7 +39,7 @@ export default function QuizResults({
         </div>
       </div>
       <button
-        className="bg-fem-purple-600 py-5 w-full rounded-xl text-preset-4-mobile text-fem-white"
+        className="bg-fem-purple-600 py-5 w-full rounded-xl md:rounded-3xl text-preset-4-mobile text-fem-white"
         onClick={onPlayAgain}
       >
         Play again

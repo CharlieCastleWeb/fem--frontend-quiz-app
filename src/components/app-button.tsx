@@ -53,14 +53,14 @@ export default function AppButton({
   return (
     <button
       onClick={onClick}
-      className={`cursor-pointer p-3.25 bg-fem-white dark:bg-fem-blue-850 w-full flex items-center  justify-items-start gap-4 md:gap-8 rounded-xl border-3 transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:pointer-events-none ${borderClass}`}
+      className={`cursor-pointer p-3.25 lg:p-5.25 bg-fem-white dark:bg-fem-blue-850 w-full flex items-center  justify-items-start gap-4 md:gap-8 rounded-xl md:rounded-3xl border-3 transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:pointer-events-none ${borderClass}`}
       style={{ "--main-color": mainColor } as React.CSSProperties}
       disabled={disabled}
     >
       {(iconSrc || iconText) && (
         <div
           className={
-            "rounded-md p-1 size-10 flex items-center justify-center md:size-14"
+            "rounded-md md:rounded-xl p-1 size-10 flex items-center justify-center md:size-14"
           }
           style={{ backgroundColor: iconTextBackgroundColor }}
         >
@@ -73,7 +73,7 @@ export default function AppButton({
           ) : (
             iconText && (
               <span
-                className={`text-preset-4-mobile ${iconTextColorClass}`}
+                className={`text-preset-4-mobile md:text-preset-4 ${iconTextColorClass}`}
                 aria-hidden="true"
               >
                 {iconText}
