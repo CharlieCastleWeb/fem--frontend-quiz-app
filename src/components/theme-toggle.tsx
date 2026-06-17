@@ -23,9 +23,11 @@ export default function ThemeToggle() {
   }, [isDark]);
 
   const iconSunSrc = isDark ? iconSunLightSvg : iconSunDarkSvg;
-  const iconSun = <img src={iconSunSrc} alt="" className="size-4" />;
+  const iconSun = <img src={iconSunSrc} alt="" className="size-4 md:size-5" />;
   const iconMoonSrc = isDark ? iconMoonLightSvg : iconMoonDarkSvg;
-  const iconMoon = <img src={iconMoonSrc} alt="" className="size-4" />;
+  const iconMoon = (
+    <img src={iconMoonSrc} alt="" className="size-4 md:size-5" />
+  );
 
   return (
     <ToggleSwitch

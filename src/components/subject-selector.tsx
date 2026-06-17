@@ -15,7 +15,7 @@ export default function SubjectSelector({
     (typeof subjectsConfig)[Subject],
   ][];
   return (
-    <div className={`flex flex-col gap-4 ${className ?? ""}`}>
+    <div className={`flex flex-col gap-4 ${className ?? ""} md:gap-6`}>
       {subjectEntries.map(([subjectKey, subject]) => {
         return (
           <AppButton

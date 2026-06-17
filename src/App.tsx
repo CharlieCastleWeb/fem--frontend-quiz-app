@@ -14,20 +14,17 @@ function App() {
   };
 
   return (
-    <div
-      className="bg-fem-gray-50 bg-mobile-light-pattern h-screen w-full
-    dark:bg-fem-blue-900 dark:bg-mobile-dark-pattern duration-300 ease-in-out"
-    >
+    <div className="bg-fem-gray-50 bg-mobile-light-pattern md:bg-tablet-light-pattern lg:bg-desktop-light-pattern dark:bg-mobile-dark-pattern dark:md:bg-tablet-dark-pattern dark:lg:bg-desktop-dark-pattern min-h-screen w-full dark:bg-fem-blue-900 duration-300 ease-in-out px-6 md:px-16">
       <AppHeader selectedSubject={selectedSubject} />
-      <main className="px-6 py-8">
+      <main className="py-8 md:py-3 md:pb-16 max-w-290 lg:mx-auto lg:px-0">
         {selectedSubject === null ? (
-          <>
+          <div className="flex flex-col gap-10 md:gap-16 lg:flex-row lg:gap-32">
             <WelcomeIntro />
             <SubjectSelector
-              className="mt-10"
+              className="w-full"
               onSelectSubject={setSelectedSubject}
             />
-          </>
+          </div>
         ) : (
           <Quiz subject={selectedSubject} onPlayAgain={handlePlayAgain} />
         )}

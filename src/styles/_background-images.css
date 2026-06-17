@@ -9,3 +9,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+@utility bg-tablet-light-pattern {
+  background-image: url("../assets/images/pattern-background-tablet-light.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@utility bg-tablet-dark-pattern {
+  background-image: url("../assets/images/pattern-background-tablet-dark.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@utility bg-desktop-light-pattern {
+  background-image: url("../assets/images/pattern-background-desktop-light.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@utility bg-desktop-dark-pattern {
+  background-image: url("../assets/images/pattern-background-desktop-dark.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
