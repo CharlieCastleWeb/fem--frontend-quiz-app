@@ -41,9 +41,13 @@ export default function AppButton({
     ? "var(--color-fem-green-500)"
     : showIncorrect
       ? "var(--color-fem-red-500)"
-      : lightColor;
+      : isSelected
+        ? "var(--main-color)"
+        : lightColor;
   const iconTextColorClass =
-    showCorrect || showIncorrect ? "text-fem-white" : "text-fem-gray-500";
+    showCorrect || showIncorrect || isSelected
+      ? "text-fem-white"
+      : "text-fem-gray-500";
   const appendIcon = showCorrect
     ? iconCorrect
     : showIncorrect
