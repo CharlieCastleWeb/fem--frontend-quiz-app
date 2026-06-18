@@ -72,7 +72,7 @@ export default function QuizQuestion({
 
         <button
           disabled={selectedAnswer === null}
-          className="cursor-pointer bg-fem-purple-600 w-full text-preset-4-mobile md:text-preset-4 text-fem-white py-5 md:py-8 rounded-xl md:rounded-3xl mt-4 md:mt-8 disabled:opacity-50"
+          className="cursor-pointer bg-fem-purple-600 hover:opacity-50 transition-opacity w-full text-preset-4-mobile md:text-preset-4 text-fem-white py-5 md:py-8 rounded-xl md:rounded-3xl mt-4 md:mt-8 disabled:opacity-50 disabled:cursor-auto"
           onClick={handleAction}
           type="button"
         >
