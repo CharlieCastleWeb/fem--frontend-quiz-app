@@ -60,7 +60,7 @@ export default function AppButton({
       {(iconSrc || iconText) && (
         <div
           className={
-            "rounded-md md:rounded-xl p-1 size-10 flex items-center justify-center md:size-14"
+            "shrink-0 rounded-md md:rounded-xl p-1 size-10 flex items-center justify-center md:size-14 transition-colors"
           }
           style={{ backgroundColor: iconTextBackgroundColor }}
         >
@@ -86,8 +86,13 @@ export default function AppButton({
         {label}
       </span>
       {appendIcon && (
-        <span className="ml-auto size-10">
-          <img src={appendIcon} alt="" aria-hidden />
+        <span className="shrink-0 ml-auto">
+          <img
+            src={appendIcon}
+            alt=""
+            aria-hidden
+            className="size-8 md:size-10"
+          />
         </span>
       )}
     </button>

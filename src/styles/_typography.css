@@ -30,8 +30,12 @@
   @apply text-[144px] font-fem-rubik font-medium leading-none;
 }
 
-@utility text-preset-2 {
+@utility text-preset-2-light {
   @apply text-[64px] font-fem-rubik font-light leading-none;
+}
+
+@utility text-preset-2-medium {
+  @apply text-[64px] font-fem-rubik font-medium leading-none;
 }
 
 @utility text-preset-3 {

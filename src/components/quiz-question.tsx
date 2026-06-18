@@ -47,7 +47,7 @@ export default function QuizQuestion({
         </div>
       </div>
       <div>
-        <div className="flex flex-col gap-4 md:gap-6 lg:gap-4 lg:max-w-141">
+        <div className="flex flex-col gap-4 md:gap-6 lg:gap-4 lg:w-141">
           {options!.map((option, index) => {
             const isSelected = selectedAnswer === index;
             const isCorrect = isAnswerSubmitted && option === correctAnswer;
