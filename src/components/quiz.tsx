@@ -46,6 +46,14 @@ export default function Quiz({ subject, onPlayAgain }: QuizProps) {
     setSelectedAnswer(optionIndex);
   };
 
+  const answerStatusMessage =
+    isAnswerSubmitted && selectedAnswer !== null
+      ? quiz.questions[currentQuestion].options[selectedAnswer] ===
+        quiz.questions[currentQuestion].answer
+        ? "Correct Answer"
+        : `Incorrect answer. The correct answer is ${quiz.questions[currentQuestion].answer}.`
+      : "";
+
   return (
     <>
       {!isQuizFinished ? (
@@ -61,6 +69,7 @@ export default function Quiz({ subject, onPlayAgain }: QuizProps) {
           mainColor={subjectsConfig[subject].mainColor}
           actionLabel={actionLabel}
           isAnswerSubmitted={isAnswerSubmitted}
+          answerStatusMessage={answerStatusMessage}
         />
       ) : (
         <QuizResults

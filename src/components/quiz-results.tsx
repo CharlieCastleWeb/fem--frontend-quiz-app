@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import SubjectBadge from "./subject-badge";
 import type { Subject } from "./subjects-config";
 
@@ -14,6 +15,10 @@ export default function QuizResults({
   selectedSubject,
   onPlayAgain,
 }: QuizResultsProps) {
+  const resultsHeadingRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    resultsHeadingRef.current?.focus();
+  }, []);
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-8">
       <div className="flex flex-col gap-2 mb-10 md:mb-16">
@@ -30,7 +35,11 @@ export default function QuizResults({
             <SubjectBadge subject={selectedSubject}></SubjectBadge>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div
+            className="flex flex-col gap-4"
+            ref={resultsHeadingRef}
+            tabIndex={-1}
+          >
             <p className="text-preset-1-mobile md:text-preset-1 text-fem-blue-900 text-center dark:text-fem-white">
               {score}
             </p>
