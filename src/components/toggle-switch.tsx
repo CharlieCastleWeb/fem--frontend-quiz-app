@@ -19,7 +19,7 @@ export default function ToggleSwitch({
   return (
     <div className="flex gap-2 items-center md:gap-4">
       {prepend && <div>{prepend}</div>}
-      <label className="w-8 md:w-12 h-5 md:h-7 p-1 bg-fem-purple-600 rounded-full relative cursor-pointer">
+      <label className="w-8 md:w-12 h-5 md:h-7 p-1 bg-fem-purple-600 rounded-full relative cursor-pointer has-focus-visible:outline-3 has-focus-visible:outline-offset-4 has-focus-visible:outline-fem-purple-600">
         <span className="sr-only">{label}</span>
         <input
           type="checkbox"

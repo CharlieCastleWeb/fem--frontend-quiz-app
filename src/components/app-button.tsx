@@ -20,7 +20,7 @@ export default function AppButton({
   return (
     <button
       onClick={onClick}
-      className={`cursor-pointer p-3.25 lg:p-5.25 bg-fem-white dark:bg-fem-blue-850 w-full flex items-center  justify-items-start gap-4 md:gap-8 rounded-xl md:rounded-3xl border-3 border-transparent transition-all duration-300 ease-in-out disabled:cursor-not-allowed disabled:pointer-events-none hover:border-(--main-color)/60`}
+      className={`cursor-pointer p-3.25 lg:p-5.25 bg-fem-white dark:bg-fem-blue-850 w-full flex items-center  justify-items-start gap-4 md:gap-8 rounded-xl md:rounded-3xl border-3 border-transparent transition-[background-color,border-color,color] duration-300 ease-in-out disabled:cursor-not-allowed disabled:pointer-events-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-fem-purple-600 hover:border-(--main-color)/60`}
       style={{ "--main-color": mainColor } as React.CSSProperties}
       disabled={disabled}
     >

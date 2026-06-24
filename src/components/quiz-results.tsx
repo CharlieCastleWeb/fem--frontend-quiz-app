@@ -40,7 +40,7 @@ export default function QuizResults({
           </div>
         </div>
         <button
-          className="bg-fem-purple-600 cursor-pointer hover:opacity-50 p-5 md:p-8 w-full rounded-xl md:rounded-3xl text-preset-4-mobile md:text-preset-4 text-fem-white"
+          className="focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-fem-purple-600 bg-fem-purple-600 cursor-pointer hover:opacity-50 p-5 md:p-8 w-full rounded-xl md:rounded-3xl text-preset-4-mobile md:text-preset-4 text-fem-white"
           onClick={onPlayAgain}
         >
           Play again
