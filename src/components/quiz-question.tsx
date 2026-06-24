@@ -1,18 +1,18 @@
-import AppButton from "./app-button";
+import QuizQuestionRadio from "./quiz-question-radio";
 
 export type QuizQuestionProps = {
   questionNumber: number;
   totalQuestions: number;
-  question?: string;
+  question: string;
   progress?: number;
-  options?: string[];
+  options: string[];
   selectedAnswer: number | null;
   onSelectAnswer: (optionIndex: number) => void;
   handleAction: () => void;
-  mainColor?: string;
-  actionLabel?: string;
-  isAnswerSubmitted?: boolean;
-  correctAnswer?: string;
+  mainColor: string;
+  actionLabel: string;
+  isAnswerSubmitted: boolean;
+  correctAnswer: string;
 };
 
 export default function QuizQuestion({
@@ -28,7 +28,6 @@ export default function QuizQuestion({
   isAnswerSubmitted,
   correctAnswer,
 }: QuizQuestionProps) {
-  const lightColor = "var(--color-fem-gray-50)";
   const progressBarWidth = `${((questionNumber + 1) / totalQuestions) * 100}%`;
   return (
     <div className="flex flex-col lg:flex-row lg:gap-32">
@@ -47,28 +46,15 @@ export default function QuizQuestion({
         </div>
       </div>
       <div>
-        <div className="flex flex-col gap-4 md:gap-6 lg:gap-4 lg:w-141">
-          {options!.map((option, index) => {
-            const isSelected = selectedAnswer === index;
-            const isCorrect = isAnswerSubmitted && option === correctAnswer;
-            const isIncorrect = isAnswerSubmitted && option !== correctAnswer;
-            const letter = String.fromCharCode(65 + index);
-            return (
-              <AppButton
-                key={option}
-                label={option}
-                iconText={letter}
-                lightColor={lightColor}
-                mainColor={mainColor}
-                onClick={() => onSelectAnswer(index)}
-                isSelected={isSelected}
-                isCorrect={isCorrect}
-                isIncorrect={isIncorrect}
-                disabled={isAnswerSubmitted}
-              />
-            );
-          })}
-        </div>
+        <QuizQuestionRadio
+          question={question}
+          options={options}
+          selectedAnswer={selectedAnswer}
+          correctAnswer={correctAnswer}
+          onSelectAnswer={onSelectAnswer}
+          mainColor={mainColor}
+          isAnswerSubmitted={isAnswerSubmitted}
+        />
 
         <button
           disabled={selectedAnswer === null}
