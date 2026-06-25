@@ -3,7 +3,7 @@ import "./App.css";
 import SubjectSelector from "./components/subject-selector";
 import WelcomeIntro from "./components/welcome-intro";
 import Quiz from "./components/quiz";
-import { type Subject } from "./components/subjects-config";
+import { type Subject } from "./config/subjects-config";
 import AppHeader from "./components/app-header";
 
 function App() {

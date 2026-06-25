@@ -1,7 +1,7 @@
 import { useState } from "react";
 import QuizQuestion from "./quiz-question";
-import { quizzesData } from "./quizzes-config";
-import { subjectsConfig, type Subject } from "./subjects-config";
+import { quizzesData } from "../config/quizzes-config";
+import { subjectsConfig, type Subject } from "../config/subjects-config";
 import QuizResults from "./quiz-results";
 
 type QuizProps = {

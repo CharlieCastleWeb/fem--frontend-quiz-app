@@ -1,4 +1,4 @@
-import { subjectsConfig, type Subject } from "./subjects-config";
+import { subjectsConfig, type Subject } from "../config/subjects-config";
 
 type SubjectBadgeProps = {
   subject: Subject;

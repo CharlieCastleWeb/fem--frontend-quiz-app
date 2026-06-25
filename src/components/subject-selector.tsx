@@ -1,5 +1,5 @@
 import AppButton from "./app-button";
-import { subjectsConfig, type Subject } from "./subjects-config";
+import { subjectsConfig, type Subject } from "../config/subjects-config";
 
 type SubjectSelectorProps = {
   className?: string;

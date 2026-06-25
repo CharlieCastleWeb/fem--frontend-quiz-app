@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import SubjectBadge from "./subject-badge";
-import type { Subject } from "./subjects-config";
+import type { Subject } from "../config/subjects-config";
 
 type QuizResultsProps = {
   score: number;

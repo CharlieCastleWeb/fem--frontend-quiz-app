@@ -1,5 +1,5 @@
 import SubjectBadge from "./subject-badge";
-import type { Subject } from "./subjects-config";
+import type { Subject } from "../config/subjects-config";
 import ThemeToggle from "./theme-toggle";
 
 type AppHeaderProps = {
