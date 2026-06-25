@@ -32,7 +32,7 @@ export default function ThemeToggle() {
   return (
     <ToggleSwitch
       prepend={iconSun}
-      label="Toggle dark theme"
+      label="Dark theme"
       append={iconMoon}
       checked={isDark}
       onChange={setIsDark}
