@@ -17,19 +17,19 @@ export default function ToggleSwitch({
 }: ToggleSwitchProps) {
   const id = useId();
   return (
-    <div className="flex gap-2 items-center md:gap-4">
+    <div className="flex items-center gap-2 md:gap-4">
       {prepend && <div>{prepend}</div>}
-      <label className="w-8 md:w-12 h-5 md:h-7 p-1 bg-fem-purple-600 rounded-full relative cursor-pointer has-focus-visible:outline-3 has-focus-visible:outline-offset-4 has-focus-visible:outline-fem-purple-600">
+      <label className="bg-fem-purple-600 has-focus-visible:outline-fem-purple-600 relative h-5 w-8 cursor-pointer rounded-full p-1 has-focus-visible:outline-3 has-focus-visible:outline-offset-4 md:h-7 md:w-12">
         <span className="sr-only">{label}</span>
         <input
           type="checkbox"
           id={id}
-          className="sr-only peer"
+          className="peer sr-only"
           role="switch"
           checked={checked}
           onChange={(event) => onChange(event.target.checked)}
         />
-        <span className="size-3 md:size-5 top-1/2 -translate-y-1/2 absolute bg-fem-white rounded-full peer-checked:translate-x-full"></span>
+        <span className="bg-fem-white absolute top-1/2 size-3 -translate-y-1/2 rounded-full peer-checked:translate-x-full md:size-5"></span>
       </label>
       {append && <div>{append}</div>}
     </div>

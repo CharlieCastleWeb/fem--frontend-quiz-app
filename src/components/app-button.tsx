@@ -20,13 +20,13 @@ export default function AppButton({
   return (
     <button
       onClick={onClick}
-      className={`cursor-pointer p-3.25 lg:p-5.25 bg-fem-white dark:bg-fem-blue-850 w-full flex items-center  justify-items-start gap-4 md:gap-8 rounded-xl md:rounded-3xl border-3 border-transparent transition-[background-color,border-color,color] duration-300 ease-in-out disabled:cursor-not-allowed disabled:pointer-events-none focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-fem-purple-600 hover:border-(--main-color)/60`}
+      className={`bg-fem-white dark:bg-fem-blue-850 focus-visible:outline-fem-purple-600 flex w-full cursor-pointer items-center justify-items-start gap-4 rounded-xl border-3 border-transparent p-3.25 transition-[background-color,border-color,color] duration-300 ease-in-out hover:border-(--main-color)/60 focus-visible:outline-3 focus-visible:outline-offset-4 disabled:pointer-events-none disabled:cursor-not-allowed md:gap-8 md:rounded-3xl lg:p-5.25`}
       style={{ "--main-color": mainColor } as React.CSSProperties}
       disabled={disabled}
     >
       <div
         className={
-          "shrink-0 rounded-md md:rounded-xl p-1 size-10 flex items-center justify-center md:size-14 transition-colors"
+          "flex size-10 shrink-0 items-center justify-center rounded-md p-1 transition-colors md:size-14 md:rounded-xl"
         }
         style={{ backgroundColor: lightColor }}
       >

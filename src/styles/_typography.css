@@ -3,57 +3,57 @@
 }
 
 @utility text-preset-1-mobile {
-  @apply font-fem-rubik font-medium text-[88px] leading-none;
+  @apply font-fem-rubik text-[88px] leading-none font-medium;
 }
 
 @utility text-preset-2-mobile {
-  @apply font-fem-rubik font-medium text-[40px] leading-none;
+  @apply font-fem-rubik text-[40px] leading-none font-medium;
 }
 
 @utility text-preset-2-mobile-light {
-  @apply font-fem-rubik font-light text-[40px] leading-none;
+  @apply font-fem-rubik text-[40px] leading-none font-light;
 }
 
 @utility text-preset-3-mobile {
-  @apply font-fem-rubik font-medium text-[20px] leading-[1.2];
+  @apply font-fem-rubik text-[20px] leading-[1.2] font-medium;
 }
 
 @utility text-preset-4-mobile {
-  @apply font-fem-rubik font-medium text-[18px] leading-none;
+  @apply font-fem-rubik text-[18px] leading-none font-medium;
 }
 
 @utility text-preset-5-mobile {
-  @apply font-fem-rubik italic font-light text-[14px] leading-none;
+  @apply font-fem-rubik text-[14px] leading-none font-light italic;
 }
 
 @utility text-preset-1 {
-  @apply text-[144px] font-fem-rubik font-medium leading-none;
+  @apply font-fem-rubik text-[144px] leading-none font-medium;
 }
 
 @utility text-preset-2-light {
-  @apply text-[64px] font-fem-rubik font-light leading-none;
+  @apply font-fem-rubik text-[64px] leading-none font-light;
 }
 
 @utility text-preset-2-medium {
-  @apply text-[64px] font-fem-rubik font-medium leading-none;
+  @apply font-fem-rubik text-[64px] leading-none font-medium;
 }
 
 @utility text-preset-3 {
-  @apply text-[36px] font-fem-rubik font-medium leading-[1.2];
+  @apply font-fem-rubik text-[36px] leading-[1.2] font-medium;
 }
 
 @utility text-preset-4 {
-  @apply text-[28px] font-fem-rubik font-medium leading-none;
+  @apply font-fem-rubik text-[28px] leading-none font-medium;
 }
 
 @utility text-preset-5-medium {
-  @apply text-[24px] font-fem-rubik font-medium leading-normal;
+  @apply font-fem-rubik text-[24px] leading-normal font-medium;
 }
 
 @utility text-preset-5-regular {
-  @apply text-[24px] font-fem-rubik font-normal leading-normal;
+  @apply font-fem-rubik text-[24px] leading-normal font-normal;
 }
 
 @utility text-preset-6 {
-  @apply text-[20px] font-fem-rubik italic font-normal leading-normal;
+  @apply font-fem-rubik text-[20px] leading-normal font-normal italic;
 }

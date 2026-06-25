@@ -24,7 +24,7 @@ export default function QuizQuestionRadio({
   return (
     <div className="flex flex-col lg:flex-row lg:gap-32">
       <div>
-        <fieldset className="flex flex-col gap-4 md:gap-6 lg:gap-4 lg:w-141">
+        <fieldset className="flex flex-col gap-4 md:gap-6 lg:w-141 lg:gap-4">
           <legend className="sr-only">{question}</legend>
           {options.map((option, index) => {
             const isSelected = selectedAnswer === index;
@@ -67,16 +67,16 @@ export default function QuizQuestionRadio({
                   checked={selectedAnswer === index}
                   onChange={() => onSelectAnswer(index)}
                   disabled={isAnswerSubmitted}
-                  className="sr-only peer"
+                  className="peer sr-only"
                 />
                 <label
                   htmlFor={radioButtonId}
-                  className={`peer-focus-visible:outline-3 peer-focus-visible:outline-offset-4 peer-focus-visible:outline-fem-purple-600 peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed cursor-pointer p-3.25 lg:p-5.25 bg-fem-white dark:bg-fem-blue-850 w-full flex items-center justify-items-start gap-4 md:gap-8 rounded-xl md:rounded-3xl border-3 transition-[background-color,border-color,color] duration-300 ease-in-out ${borderClass}`}
+                  className={`peer-focus-visible:outline-fem-purple-600 bg-fem-white dark:bg-fem-blue-850 flex w-full cursor-pointer items-center justify-items-start gap-4 rounded-xl border-3 p-3.25 transition-[background-color,border-color,color] duration-300 ease-in-out peer-focus-visible:outline-3 peer-focus-visible:outline-offset-4 peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed md:gap-8 md:rounded-3xl lg:p-5.25 ${borderClass}`}
                   style={{ "--main-color": mainColor } as React.CSSProperties}
                 >
                   <div
                     className={
-                      "shrink-0 rounded-md md:rounded-xl p-1 size-10 flex items-center justify-center md:size-14 transition-colors"
+                      "flex size-10 shrink-0 items-center justify-center rounded-md p-1 transition-colors md:size-14 md:rounded-xl"
                     }
                     style={{ backgroundColor: iconTextBackgroundColor }}
                   >
@@ -90,7 +90,7 @@ export default function QuizQuestionRadio({
                     {option}
                   </span>
                   {appendIcon && (
-                    <span className="shrink-0 ml-auto">
+                    <span className="ml-auto shrink-0">
                       <img
                         src={appendIcon}
                         alt=""
