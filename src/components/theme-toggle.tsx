@@ -7,19 +7,18 @@ import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(() => {
-    const localStorageIsDarkItem = localStorage.getItem("isDark");
+    if (typeof window === "undefined") return false;
+    const localStorageIsDarkItem = window.localStorage.getItem("isDark");
     if (localStorageIsDarkItem !== null) {
       return localStorageIsDarkItem === "true";
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return true;
-    }
-    return false;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     document.documentElement.classList.toggle("dark", isDark);
-    localStorage.setItem("isDark", String(isDark));
+    window.localStorage.setItem("isDark", String(isDark));
   }, [isDark]);
 
   const iconSunSrc = isDark ? iconSunLightSvg : iconSunDarkSvg;
